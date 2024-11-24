@@ -59,6 +59,7 @@ public class AccountController {
         return "Account Updated successfully";
     }
 
+
     @DeleteMapping("{accountNumber}")
     public String deleteAccount(@PathVariable Long accountNumber){
         accountService.deleteAccount(accountNumber);

@@ -17,4 +17,6 @@ public interface AccountRepository extends JpaRepository<Account,Long> {
     //@Query(value = "select account_number,account_type,balance,opt_for_sweep from account where user_id =:userId",nativeQuery = true)
     @Query(value = "select * from account where user_id =:userId",nativeQuery = true)
     List<Account> findAllAccountsByUserId(@Param("userId") Long userId);
+
+    List<Account> findByOptForSweepTrue();
 }
