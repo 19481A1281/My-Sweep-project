@@ -2,6 +2,8 @@ package com.banking.Sweep.model;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDateTime;
+
 @Entity
 public class Transaction {
 
@@ -16,7 +18,8 @@ public class Transaction {
     @JoinColumn(name = "account_id", nullable = false) // Link to Account
     private Account account;
 
-
+    @Column(nullable = false)
+    private LocalDateTime timeStamp;
     //account owns the relation
 
     //mappedBy = "transaction"
@@ -29,16 +32,20 @@ public class Transaction {
 
     }
 
-    public Transaction(Long transactionId, Double amount, Account account) {
+    public Transaction(Double amount, Account account, LocalDateTime timeStamp) {
+        this.amount = amount;
+        this.account = account;
+        this.timeStamp = timeStamp;
+    }
+
+    public Transaction(Long transactionId, Double amount, Account account, LocalDateTime timeStamp) {
         this.transactionId = transactionId;
         this.amount = amount;
         this.account = account;
+        this.timeStamp = timeStamp;
     }
 
-    public Transaction(Double amount, Account account) {
-        this.amount=amount;
-        this.account=account;
-    }
+
 
     public Long getTransactionId() {
         return transactionId;
@@ -54,6 +61,15 @@ public class Transaction {
 
     public void setAmount(Double amount) {
         this.amount = amount;
+    }
+
+    public LocalDateTime getTimeStamp() {
+        return timeStamp;
+    }
+
+
+    public void setTimeStamp(LocalDateTime timeStamp) {
+        this.timeStamp = timeStamp;
     }
 
     public Account getAccount() {
