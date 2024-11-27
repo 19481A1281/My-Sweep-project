@@ -1,9 +1,10 @@
 package com.banking.Sweep.controller;
 
+import com.banking.Sweep.DTO.SweepDTO;
+import com.banking.Sweep.model.Sweep;
 import com.banking.Sweep.service.SweepService;
-import org.springframework.web.bind.annotation.PatchMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/bank/sweep")
@@ -14,6 +15,13 @@ public class SweepController {
         this.sweepService = sweepService;
     }
 
+    @PostMapping()
+    public String addSweep(@RequestBody Sweep sweep){
+        sweepService.addSweep(sweep);
+        return "Sweep added successfully";
+    }
+
+    @Scheduled(cron = "59 02 22 * * ?")
     @PatchMapping
     public String startSweep(){
         sweepService.startSweep();

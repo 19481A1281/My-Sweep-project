@@ -9,20 +9,20 @@ public class Sweep {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long sweepId;
 
-    @ManyToOne
-    @JoinColumn(name = "sourceAccountNumber",referencedColumnName = "accountNumber",nullable = false,unique = true)
-    private Account sourceAccount;
+//    @ManyToOne
+//    @JoinColumn(name = "sourceAccountNumber",referencedColumnName = "accountNumber",nullable = false,unique = true)
+    @Column(nullable = false)
+    private Long sourceAccount;
 
-    @ManyToOne
-    @JoinColumn(name = "destinationAccountNumber",referencedColumnName = "accountNumber",nullable = false,unique = true)
-    private Account destinationAccount;
+//    @ManyToOne
+//    @JoinColumn(name = "destinationAccountNumber",referencedColumnName = "accountNumber",nullable = false,unique = true)
+    @Column(nullable = false)
+    private Long destinationAccount;
 
     public Sweep() {
     }
 
-
-
-    public Sweep(Long sweepId, Account sourceAccount, Account destinationAccount) {
+    public Sweep(Long sweepId, Long sourceAccount, Long destinationAccount) {
         this.sweepId = sweepId;
         this.sourceAccount = sourceAccount;
         this.destinationAccount = destinationAccount;
@@ -36,19 +36,19 @@ public class Sweep {
         this.sweepId = sweepId;
     }
 
-    public Account getSourceAccount() {
+    public Long getSourceAccount() {
         return sourceAccount;
     }
 
-    public void setSourceAccount(Account sourceAccount) {
+    public void setSourceAccount(Long sourceAccount) {
         this.sourceAccount = sourceAccount;
     }
 
-    public Account getDestinationAccount() {
+    public Long getDestinationAccount() {
         return destinationAccount;
     }
 
-    public void setDestinationAccount(Account destinationAccount) {
+    public void setDestinationAccount(Long destinationAccount) {
         this.destinationAccount = destinationAccount;
     }
 }

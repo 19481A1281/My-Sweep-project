@@ -12,6 +12,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -33,7 +34,7 @@ public class AccountServiceImpl implements AccountService {
     public void createAccount(Account account) {
 
         accountRepository.save(account);
-        Transaction transaction=new Transaction(account.getBalance(), account);
+        Transaction transaction=new Transaction(account.getBalance(), account,LocalDateTime.now());
         transactionRepository.save(transaction);
     }
 
@@ -57,11 +58,16 @@ public class AccountServiceImpl implements AccountService {
 
         Double newBalance=account.getBalance()+adjustBalanceDTO.amount();
 
-        account.setBalance(newBalance);
-        accountRepository.save(account);
+        if(account.getBalance()>0) {
+            account.setBalance(newBalance);
+            accountRepository.save(account);
+            Transaction transaction=new Transaction(newBalance,account, LocalDateTime.now());
+            transactionRepository.save(transaction);
+        }
+        else {
+            throw new ArithmeticException("Insufficient funds");
+        }
 
-        Transaction transaction=new Transaction(newBalance,account);
-        transactionRepository.save(transaction);
     }
 
     @Override
