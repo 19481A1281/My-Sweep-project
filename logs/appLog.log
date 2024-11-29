@@ -1,0 +1,692 @@
+2024-11-29 21:04:24,658 [INFO] com.banking.Sweep.SweepApplication[main] Starting SweepApplication using Java 17.0.13 with PID 14860 (D:\IntellijWorkspace\Sweep\Sweep\target\classes started by bhanu in D:\IntellijWorkspace\Sweep)
+2024-11-29 21:04:24,666 [INFO] com.banking.Sweep.SweepApplication[main] No active profile set, falling back to 1 default profile: "default"
+2024-11-29 21:04:26,449 [INFO] org.springframework.data.repository.config.RepositoryConfigurationDelegate[main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-29 21:04:26,554 [INFO] org.springframework.data.repository.config.RepositoryConfigurationDelegate[main] Finished Spring Data repository scanning in 97 ms. Found 5 JPA repository interfaces.
+2024-11-29 21:04:27,486 [INFO] org.springframework.boot.web.embedded.tomcat.TomcatWebServer[main] Tomcat initialized with port 8080 (http)
+2024-11-29 21:04:27,499 [INFO] org.apache.catalina.core.StandardService[main] Starting service [Tomcat]
+2024-11-29 21:04:27,499 [INFO] org.apache.catalina.core.StandardEngine[main] Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-11-29 21:04:27,583 [INFO] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/][main] Initializing Spring embedded WebApplicationContext
+2024-11-29 21:04:27,583 [INFO] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext[main] Root WebApplicationContext: initialization completed in 2803 ms
+2024-11-29 21:04:27,777 [INFO] org.hibernate.jpa.internal.util.LogHelper[main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-29 21:04:27,865 [INFO] org.hibernate.Version[main] HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-11-29 21:04:27,910 [INFO] org.hibernate.cache.internal.RegionFactoryInitiator[main] HHH000026: Second-level cache disabled
+2024-11-29 21:04:28,267 [INFO] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo[main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-29 21:04:28,303 [INFO] com.zaxxer.hikari.HikariDataSource[main] HikariPool-1 - Starting...
+2024-11-29 21:04:29,429 [WARN] org.hibernate.engine.jdbc.spi.SqlExceptionHelper[main] SQL Error: 0, SQLState: 08S01
+2024-11-29 21:04:29,430 [ERROR] org.hibernate.engine.jdbc.spi.SqlExceptionHelper[main] Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2024-11-29 21:04:29,432 [WARN] org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator[main] HHH000342: Could not obtain connection to query metadata
+org.hibernate.exception.JDBCConnectionException: unable to obtain isolated JDBC connection [Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.] [n/a]
+	at org.hibernate.exception.internal.SQLStateConversionDelegate.convert(SQLStateConversionDelegate.java:100)
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:58)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:108)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:94)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:116)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:292)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:124)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:78)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:130)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:238)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215)
+	at org.hibernate.boot.model.relational.Database.<init>(Database.java:45)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:221)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:189)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:171)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1431)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1502)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1853)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1802)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:954)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:625)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
+	at com.banking.Sweep.SweepApplication.main(SweepApplication.java:16)
+Caused by: com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:815)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:438)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:241)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:189)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:137)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:360)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:202)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:461)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:550)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:98)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:111)
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:439)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:61)
+	... 35 common frames omitted
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:104)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:149)
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:165)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:88)
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:120)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:935)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:805)
+	... 48 common frames omitted
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:547)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:602)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:153)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:62)
+	... 51 common frames omitted
+2024-11-29 21:04:29,440 [ERROR] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean[main] Failed to initialize JPA EntityManagerFactory: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment] due to: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)
+2024-11-29 21:04:29,442 [WARN] org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext[main] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment] due to: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)
+2024-11-29 21:04:29,450 [INFO] org.apache.catalina.core.StandardService[main] Stopping service [Tomcat]
+2024-11-29 21:04:29,479 [INFO] org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLogger[main] 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-11-29 21:04:29,506 [ERROR] org.springframework.boot.SpringApplication[main] Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment] due to: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1806)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:954)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:625)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
+	at com.banking.Sweep.SweepApplication.main(SweepApplication.java:16)
+Caused by: org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment] due to: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:276)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:238)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215)
+	at org.hibernate.boot.model.relational.Database.<init>(Database.java:45)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:221)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:189)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:171)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1431)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1502)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1853)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1802)
+	... 15 common frames omitted
+Caused by: org.hibernate.HibernateException: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)
+	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.determineDialect(DialectFactoryImpl.java:191)
+	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.buildDialect(DialectFactoryImpl.java:87)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentWithDefaults(JdbcEnvironmentInitiator.java:153)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:364)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:124)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:78)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:130)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
+	... 30 common frames omitted
+2024-11-29 21:05:56,196 [INFO] com.banking.Sweep.SweepApplication[main] Starting SweepApplication using Java 17.0.13 with PID 14524 (D:\IntellijWorkspace\Sweep\Sweep\target\classes started by bhanu in D:\IntellijWorkspace\Sweep)
+2024-11-29 21:05:56,204 [INFO] com.banking.Sweep.SweepApplication[main] No active profile set, falling back to 1 default profile: "default"
+2024-11-29 21:05:57,120 [INFO] org.springframework.data.repository.config.RepositoryConfigurationDelegate[main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-29 21:05:57,223 [INFO] org.springframework.data.repository.config.RepositoryConfigurationDelegate[main] Finished Spring Data repository scanning in 87 ms. Found 5 JPA repository interfaces.
+2024-11-29 21:05:57,848 [INFO] org.springframework.boot.web.embedded.tomcat.TomcatWebServer[main] Tomcat initialized with port 8080 (http)
+2024-11-29 21:05:57,861 [INFO] org.apache.catalina.core.StandardService[main] Starting service [Tomcat]
+2024-11-29 21:05:57,861 [INFO] org.apache.catalina.core.StandardEngine[main] Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-11-29 21:05:57,933 [INFO] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/][main] Initializing Spring embedded WebApplicationContext
+2024-11-29 21:05:57,933 [INFO] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext[main] Root WebApplicationContext: initialization completed in 1677 ms
+2024-11-29 21:05:58,114 [INFO] org.hibernate.jpa.internal.util.LogHelper[main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-29 21:05:58,187 [INFO] org.hibernate.Version[main] HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-11-29 21:05:58,228 [INFO] org.hibernate.cache.internal.RegionFactoryInitiator[main] HHH000026: Second-level cache disabled
+2024-11-29 21:05:58,576 [INFO] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo[main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-29 21:05:58,613 [INFO] com.zaxxer.hikari.HikariDataSource[main] HikariPool-1 - Starting...
+2024-11-29 21:05:58,998 [INFO] com.zaxxer.hikari.pool.HikariPool[main] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@686b1e2d
+2024-11-29 21:05:59,000 [INFO] com.zaxxer.hikari.HikariDataSource[main] HikariPool-1 - Start completed.
+2024-11-29 21:06:00,035 [INFO] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator[main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-29 21:06:00,143 [INFO] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean[main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-29 21:06:00,383 [INFO] org.springframework.data.jpa.repository.query.QueryEnhancerFactory[main] Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-11-29 21:06:00,665 [WARN] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration[main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-11-29 21:06:00,764 [WARN] org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext[main] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Ambiguous mapping. Cannot map 'bank/balance' method 
+com.banking.Sweep.controller.TransactionController#getTransactionById(Long)
+to {GET [/ || ]}: There is already 'bank/balance' bean method
+com.banking.Sweep.controller.TransactionController#getAllTransactions() mapped.
+2024-11-29 21:06:00,764 [INFO] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean[main] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-29 21:06:00,764 [INFO] com.zaxxer.hikari.HikariDataSource[main] HikariPool-1 - Shutdown initiated...
+2024-11-29 21:06:00,777 [INFO] com.zaxxer.hikari.HikariDataSource[main] HikariPool-1 - Shutdown completed.
+2024-11-29 21:06:00,780 [INFO] org.apache.catalina.core.StandardService[main] Stopping service [Tomcat]
+2024-11-29 21:06:00,797 [INFO] org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLogger[main] 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-11-29 21:06:00,826 [ERROR] org.springframework.boot.SpringApplication[main] Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Ambiguous mapping. Cannot map 'bank/balance' method 
+com.banking.Sweep.controller.TransactionController#getTransactionById(Long)
+to {GET [/ || ]}: There is already 'bank/balance' bean method
+com.banking.Sweep.controller.TransactionController#getAllTransactions() mapped.
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1806)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:971)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:625)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
+	at com.banking.Sweep.SweepApplication.main(SweepApplication.java:16)
+Caused by: java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'bank/balance' method 
+com.banking.Sweep.controller.TransactionController#getTransactionById(Long)
+to {GET [/ || ]}: There is already 'bank/balance' bean method
+com.banking.Sweep.controller.TransactionController#getAllTransactions() mapped.
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.validateMethodMapping(AbstractHandlerMethodMapping.java:674)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:636)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(AbstractHandlerMethodMapping.java:331)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.registerHandlerMethod(RequestMappingHandlerMapping.java:508)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.registerHandlerMethod(RequestMappingHandlerMapping.java:84)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.lambda$detectHandlerMethods$2(AbstractHandlerMethodMapping.java:298)
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:721)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.detectHandlerMethods(AbstractHandlerMethodMapping.java:296)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.processCandidateBean(AbstractHandlerMethodMapping.java:265)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.initHandlerMethods(AbstractHandlerMethodMapping.java:224)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.afterPropertiesSet(AbstractHandlerMethodMapping.java:212)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.afterPropertiesSet(RequestMappingHandlerMapping.java:239)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1853)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1802)
+	... 16 common frames omitted
+2024-11-29 21:06:47,065 [INFO] com.banking.Sweep.SweepApplication[main] Starting SweepApplication using Java 17.0.13 with PID 7244 (D:\IntellijWorkspace\Sweep\Sweep\target\classes started by bhanu in D:\IntellijWorkspace\Sweep)
+2024-11-29 21:06:47,069 [INFO] com.banking.Sweep.SweepApplication[main] No active profile set, falling back to 1 default profile: "default"
+2024-11-29 21:06:47,995 [INFO] org.springframework.data.repository.config.RepositoryConfigurationDelegate[main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-29 21:06:48,074 [INFO] org.springframework.data.repository.config.RepositoryConfigurationDelegate[main] Finished Spring Data repository scanning in 68 ms. Found 5 JPA repository interfaces.
+2024-11-29 21:06:48,693 [INFO] org.springframework.boot.web.embedded.tomcat.TomcatWebServer[main] Tomcat initialized with port 8080 (http)
+2024-11-29 21:06:48,702 [INFO] org.apache.catalina.core.StandardService[main] Starting service [Tomcat]
+2024-11-29 21:06:48,707 [INFO] org.apache.catalina.core.StandardEngine[main] Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-11-29 21:06:48,765 [INFO] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/][main] Initializing Spring embedded WebApplicationContext
+2024-11-29 21:06:48,765 [INFO] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext[main] Root WebApplicationContext: initialization completed in 1644 ms
+2024-11-29 21:06:48,929 [INFO] org.hibernate.jpa.internal.util.LogHelper[main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-29 21:06:48,985 [INFO] org.hibernate.Version[main] HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-11-29 21:06:49,018 [INFO] org.hibernate.cache.internal.RegionFactoryInitiator[main] HHH000026: Second-level cache disabled
+2024-11-29 21:06:49,315 [INFO] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo[main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-29 21:06:49,351 [INFO] com.zaxxer.hikari.HikariDataSource[main] HikariPool-1 - Starting...
+2024-11-29 21:06:49,610 [INFO] com.zaxxer.hikari.pool.HikariPool[main] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4404a6b
+2024-11-29 21:06:49,616 [INFO] com.zaxxer.hikari.HikariDataSource[main] HikariPool-1 - Start completed.
+2024-11-29 21:06:50,579 [INFO] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator[main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-29 21:06:50,652 [INFO] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean[main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-29 21:06:50,958 [INFO] org.springframework.data.jpa.repository.query.QueryEnhancerFactory[main] Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-11-29 21:06:51,199 [WARN] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration[main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-11-29 21:06:51,291 [WARN] org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext[main] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Ambiguous mapping. Cannot map 'bank/transaction' method 
+com.banking.Sweep.controller.TransactionController#getTransactionById(Long)
+to {GET [/ || ]}: There is already 'bank/transaction' bean method
+com.banking.Sweep.controller.TransactionController#getAllTransactions() mapped.
+2024-11-29 21:06:51,291 [INFO] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean[main] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-29 21:06:51,304 [INFO] com.zaxxer.hikari.HikariDataSource[main] HikariPool-1 - Shutdown initiated...
+2024-11-29 21:06:51,308 [INFO] com.zaxxer.hikari.HikariDataSource[main] HikariPool-1 - Shutdown completed.
+2024-11-29 21:06:51,314 [INFO] org.apache.catalina.core.StandardService[main] Stopping service [Tomcat]
+2024-11-29 21:06:51,324 [INFO] org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLogger[main] 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-11-29 21:06:51,341 [ERROR] org.springframework.boot.SpringApplication[main] Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Ambiguous mapping. Cannot map 'bank/transaction' method 
+com.banking.Sweep.controller.TransactionController#getTransactionById(Long)
+to {GET [/ || ]}: There is already 'bank/transaction' bean method
+com.banking.Sweep.controller.TransactionController#getAllTransactions() mapped.
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1806)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:971)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:625)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
+	at com.banking.Sweep.SweepApplication.main(SweepApplication.java:16)
+Caused by: java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'bank/transaction' method 
+com.banking.Sweep.controller.TransactionController#getTransactionById(Long)
+to {GET [/ || ]}: There is already 'bank/transaction' bean method
+com.banking.Sweep.controller.TransactionController#getAllTransactions() mapped.
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.validateMethodMapping(AbstractHandlerMethodMapping.java:674)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:636)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(AbstractHandlerMethodMapping.java:331)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.registerHandlerMethod(RequestMappingHandlerMapping.java:508)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.registerHandlerMethod(RequestMappingHandlerMapping.java:84)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.lambda$detectHandlerMethods$2(AbstractHandlerMethodMapping.java:298)
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:721)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.detectHandlerMethods(AbstractHandlerMethodMapping.java:296)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.processCandidateBean(AbstractHandlerMethodMapping.java:265)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.initHandlerMethods(AbstractHandlerMethodMapping.java:224)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.afterPropertiesSet(AbstractHandlerMethodMapping.java:212)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.afterPropertiesSet(RequestMappingHandlerMapping.java:239)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1853)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1802)
+	... 16 common frames omitted
+2024-11-29 21:08:18,475 [INFO] com.banking.Sweep.SweepApplication[main] Starting SweepApplication using Java 17.0.13 with PID 5304 (D:\IntellijWorkspace\Sweep\Sweep\target\classes started by bhanu in D:\IntellijWorkspace\Sweep)
+2024-11-29 21:08:18,483 [INFO] com.banking.Sweep.SweepApplication[main] No active profile set, falling back to 1 default profile: "default"
+2024-11-29 21:08:19,448 [INFO] org.springframework.data.repository.config.RepositoryConfigurationDelegate[main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-29 21:08:19,536 [INFO] org.springframework.data.repository.config.RepositoryConfigurationDelegate[main] Finished Spring Data repository scanning in 85 ms. Found 5 JPA repository interfaces.
+2024-11-29 21:08:20,242 [INFO] org.springframework.boot.web.embedded.tomcat.TomcatWebServer[main] Tomcat initialized with port 8080 (http)
+2024-11-29 21:08:20,248 [INFO] org.apache.catalina.core.StandardService[main] Starting service [Tomcat]
+2024-11-29 21:08:20,248 [INFO] org.apache.catalina.core.StandardEngine[main] Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-11-29 21:08:20,311 [INFO] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/][main] Initializing Spring embedded WebApplicationContext
+2024-11-29 21:08:20,314 [INFO] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext[main] Root WebApplicationContext: initialization completed in 1779 ms
+2024-11-29 21:08:20,492 [INFO] org.hibernate.jpa.internal.util.LogHelper[main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-29 21:08:20,550 [INFO] org.hibernate.Version[main] HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-11-29 21:08:20,582 [INFO] org.hibernate.cache.internal.RegionFactoryInitiator[main] HHH000026: Second-level cache disabled
+2024-11-29 21:08:20,907 [INFO] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo[main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-29 21:08:20,938 [INFO] com.zaxxer.hikari.HikariDataSource[main] HikariPool-1 - Starting...
+2024-11-29 21:08:21,224 [INFO] com.zaxxer.hikari.pool.HikariPool[main] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4d2f9e3c
+2024-11-29 21:08:21,227 [INFO] com.zaxxer.hikari.HikariDataSource[main] HikariPool-1 - Start completed.
+2024-11-29 21:08:22,139 [INFO] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator[main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-29 21:08:22,218 [INFO] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean[main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-29 21:08:22,496 [INFO] org.springframework.data.jpa.repository.query.QueryEnhancerFactory[main] Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-11-29 21:08:22,805 [WARN] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration[main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-11-29 21:08:23,290 [INFO] org.springframework.boot.web.embedded.tomcat.TomcatWebServer[main] Tomcat started on port 8080 (http) with context path '/'
+2024-11-29 21:08:23,298 [INFO] com.banking.Sweep.SweepApplication[main] Started SweepApplication in 5.296 seconds (process running for 5.664)
+2024-11-29 21:08:33,542 [INFO] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/][http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-11-29 21:08:33,542 [INFO] org.springframework.web.servlet.DispatcherServlet[http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2024-11-29 21:08:33,546 [INFO] org.springframework.web.servlet.DispatcherServlet[http-nio-8080-exec-1] Completed initialization in 4 ms
+2024-11-29 21:12:46,920 [INFO] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean[SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-29 21:12:46,920 [INFO] com.zaxxer.hikari.HikariDataSource[SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-11-29 21:12:46,936 [INFO] com.zaxxer.hikari.HikariDataSource[SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-11-29 21:12:49,809 [INFO] com.banking.Sweep.SweepApplication[main] Starting SweepApplication using Java 17.0.13 with PID 8380 (D:\IntellijWorkspace\Sweep\Sweep\target\classes started by bhanu in D:\IntellijWorkspace\Sweep)
+2024-11-29 21:12:49,811 [INFO] com.banking.Sweep.SweepApplication[main] No active profile set, falling back to 1 default profile: "default"
+2024-11-29 21:12:50,775 [INFO] org.springframework.data.repository.config.RepositoryConfigurationDelegate[main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-29 21:12:50,862 [INFO] org.springframework.data.repository.config.RepositoryConfigurationDelegate[main] Finished Spring Data repository scanning in 82 ms. Found 5 JPA repository interfaces.
+2024-11-29 21:12:51,454 [INFO] org.springframework.boot.web.embedded.tomcat.TomcatWebServer[main] Tomcat initialized with port 8080 (http)
+2024-11-29 21:12:51,462 [INFO] org.apache.catalina.core.StandardService[main] Starting service [Tomcat]
+2024-11-29 21:12:51,462 [INFO] org.apache.catalina.core.StandardEngine[main] Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-11-29 21:12:51,519 [INFO] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/][main] Initializing Spring embedded WebApplicationContext
+2024-11-29 21:12:51,527 [INFO] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext[main] Root WebApplicationContext: initialization completed in 1655 ms
+2024-11-29 21:12:51,680 [INFO] org.hibernate.jpa.internal.util.LogHelper[main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-29 21:12:51,740 [INFO] org.hibernate.Version[main] HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-11-29 21:12:51,775 [INFO] org.hibernate.cache.internal.RegionFactoryInitiator[main] HHH000026: Second-level cache disabled
+2024-11-29 21:12:52,076 [INFO] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo[main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-29 21:12:52,108 [INFO] com.zaxxer.hikari.HikariDataSource[main] HikariPool-1 - Starting...
+2024-11-29 21:12:52,387 [INFO] com.zaxxer.hikari.pool.HikariPool[main] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@24fc2c80
+2024-11-29 21:12:52,387 [INFO] com.zaxxer.hikari.HikariDataSource[main] HikariPool-1 - Start completed.
+2024-11-29 21:12:53,320 [INFO] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator[main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-29 21:12:53,385 [INFO] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean[main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-29 21:12:53,673 [INFO] org.springframework.data.jpa.repository.query.QueryEnhancerFactory[main] Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-11-29 21:12:53,951 [WARN] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration[main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-11-29 21:12:54,396 [INFO] org.springframework.boot.web.embedded.tomcat.TomcatWebServer[main] Tomcat started on port 8080 (http) with context path '/'
+2024-11-29 21:12:54,403 [INFO] com.banking.Sweep.SweepApplication[main] Started SweepApplication in 5.061 seconds (process running for 5.453)
+2024-11-29 21:12:57,995 [INFO] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/][http-nio-8080-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-11-29 21:12:57,995 [INFO] org.springframework.web.servlet.DispatcherServlet[http-nio-8080-exec-2] Initializing Servlet 'dispatcherServlet'
+2024-11-29 21:12:58,001 [INFO] org.springframework.web.servlet.DispatcherServlet[http-nio-8080-exec-2] Completed initialization in 6 ms
+2024-11-29 21:14:16,634 [INFO] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean[SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-29 21:14:16,634 [INFO] com.zaxxer.hikari.HikariDataSource[SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-11-29 21:14:16,644 [INFO] com.zaxxer.hikari.HikariDataSource[SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-11-29 21:14:19,456 [INFO] com.banking.Sweep.SweepApplication[main] Starting SweepApplication using Java 17.0.13 with PID 13760 (D:\IntellijWorkspace\Sweep\Sweep\target\classes started by bhanu in D:\IntellijWorkspace\Sweep)
+2024-11-29 21:14:19,457 [INFO] com.banking.Sweep.SweepApplication[main] No active profile set, falling back to 1 default profile: "default"
+2024-11-29 21:14:20,356 [INFO] org.springframework.data.repository.config.RepositoryConfigurationDelegate[main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-29 21:14:20,440 [INFO] org.springframework.data.repository.config.RepositoryConfigurationDelegate[main] Finished Spring Data repository scanning in 75 ms. Found 5 JPA repository interfaces.
+2024-11-29 21:14:21,110 [INFO] org.springframework.boot.web.embedded.tomcat.TomcatWebServer[main] Tomcat initialized with port 8080 (http)
+2024-11-29 21:14:21,125 [INFO] org.apache.catalina.core.StandardService[main] Starting service [Tomcat]
+2024-11-29 21:14:21,125 [INFO] org.apache.catalina.core.StandardEngine[main] Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-11-29 21:14:21,190 [INFO] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/][main] Initializing Spring embedded WebApplicationContext
+2024-11-29 21:14:21,190 [INFO] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext[main] Root WebApplicationContext: initialization completed in 1681 ms
+2024-11-29 21:14:21,366 [INFO] org.hibernate.jpa.internal.util.LogHelper[main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-29 21:14:21,422 [INFO] org.hibernate.Version[main] HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-11-29 21:14:21,456 [INFO] org.hibernate.cache.internal.RegionFactoryInitiator[main] HHH000026: Second-level cache disabled
+2024-11-29 21:14:21,782 [INFO] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo[main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-29 21:14:21,819 [INFO] com.zaxxer.hikari.HikariDataSource[main] HikariPool-1 - Starting...
+2024-11-29 21:14:22,160 [INFO] com.zaxxer.hikari.pool.HikariPool[main] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@b86cb18
+2024-11-29 21:14:22,163 [INFO] com.zaxxer.hikari.HikariDataSource[main] HikariPool-1 - Start completed.
+2024-11-29 21:14:23,140 [INFO] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator[main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-29 21:14:23,227 [INFO] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean[main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-29 21:14:23,495 [INFO] org.springframework.data.jpa.repository.query.QueryEnhancerFactory[main] Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-11-29 21:14:23,808 [WARN] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration[main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-11-29 21:14:24,296 [INFO] org.springframework.boot.web.embedded.tomcat.TomcatWebServer[main] Tomcat started on port 8080 (http) with context path '/'
+2024-11-29 21:14:24,312 [INFO] com.banking.Sweep.SweepApplication[main] Started SweepApplication in 5.33 seconds (process running for 5.706)
+2024-11-29 21:15:15,332 [INFO] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/][http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-11-29 21:15:15,332 [INFO] org.springframework.web.servlet.DispatcherServlet[http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2024-11-29 21:15:15,334 [INFO] org.springframework.web.servlet.DispatcherServlet[http-nio-8080-exec-1] Completed initialization in 2 ms
+2024-11-29 21:16:35,423 [INFO] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean[SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-29 21:16:35,426 [INFO] com.zaxxer.hikari.HikariDataSource[SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-11-29 21:16:35,439 [INFO] com.zaxxer.hikari.HikariDataSource[SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-11-29 21:16:38,192 [INFO] com.banking.Sweep.SweepApplication[main] Starting SweepApplication using Java 17.0.13 with PID 11224 (D:\IntellijWorkspace\Sweep\Sweep\target\classes started by bhanu in D:\IntellijWorkspace\Sweep)
+2024-11-29 21:16:38,194 [INFO] com.banking.Sweep.SweepApplication[main] No active profile set, falling back to 1 default profile: "default"
+2024-11-29 21:16:39,168 [INFO] org.springframework.data.repository.config.RepositoryConfigurationDelegate[main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-29 21:16:39,262 [INFO] org.springframework.data.repository.config.RepositoryConfigurationDelegate[main] Finished Spring Data repository scanning in 83 ms. Found 5 JPA repository interfaces.
+2024-11-29 21:16:39,867 [INFO] org.springframework.boot.web.embedded.tomcat.TomcatWebServer[main] Tomcat initialized with port 8080 (http)
+2024-11-29 21:16:39,880 [INFO] org.apache.catalina.core.StandardService[main] Starting service [Tomcat]
+2024-11-29 21:16:39,880 [INFO] org.apache.catalina.core.StandardEngine[main] Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-11-29 21:16:39,946 [INFO] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/][main] Initializing Spring embedded WebApplicationContext
+2024-11-29 21:16:39,946 [INFO] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext[main] Root WebApplicationContext: initialization completed in 1699 ms
+2024-11-29 21:16:40,132 [INFO] org.hibernate.jpa.internal.util.LogHelper[main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-29 21:16:40,183 [INFO] org.hibernate.Version[main] HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-11-29 21:16:40,216 [INFO] org.hibernate.cache.internal.RegionFactoryInitiator[main] HHH000026: Second-level cache disabled
+2024-11-29 21:16:40,563 [INFO] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo[main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-29 21:16:40,596 [INFO] com.zaxxer.hikari.HikariDataSource[main] HikariPool-1 - Starting...
+2024-11-29 21:16:40,921 [INFO] com.zaxxer.hikari.pool.HikariPool[main] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1bbb42b4
+2024-11-29 21:16:40,925 [INFO] com.zaxxer.hikari.HikariDataSource[main] HikariPool-1 - Start completed.
+2024-11-29 21:16:41,880 [INFO] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator[main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-29 21:16:41,950 [INFO] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean[main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-29 21:16:42,205 [INFO] org.springframework.data.jpa.repository.query.QueryEnhancerFactory[main] Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-11-29 21:16:42,490 [WARN] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration[main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-11-29 21:16:42,988 [INFO] org.springframework.boot.web.embedded.tomcat.TomcatWebServer[main] Tomcat started on port 8080 (http) with context path '/'
+2024-11-29 21:16:43,005 [INFO] com.banking.Sweep.SweepApplication[main] Started SweepApplication in 5.251 seconds (process running for 5.614)
+2024-11-29 21:16:45,563 [INFO] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/][http-nio-8080-exec-4] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-11-29 21:16:45,568 [INFO] org.springframework.web.servlet.DispatcherServlet[http-nio-8080-exec-4] Initializing Servlet 'dispatcherServlet'
+2024-11-29 21:16:45,572 [INFO] org.springframework.web.servlet.DispatcherServlet[http-nio-8080-exec-4] Completed initialization in 0 ms
+2024-11-29 21:16:46,157 [WARN] org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver[http-nio-8080-exec-4] Ignoring exception, response committed already: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Document nesting depth (1001) exceeds the maximum allowed (1000, from `StreamWriteConstraints.getMaxNestingDepth()`)
+2024-11-29 21:16:46,159 [WARN] org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver[http-nio-8080-exec-4] Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Document nesting depth (1001) exceeds the maximum allowed (1000, from `StreamWriteConstraints.getMaxNestingDepth()`)]
+2024-11-29 21:20:07,300 [INFO] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean[SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-29 21:20:07,304 [INFO] com.zaxxer.hikari.HikariDataSource[SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-11-29 21:20:07,317 [INFO] com.zaxxer.hikari.HikariDataSource[SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-11-29 21:20:10,571 [INFO] com.banking.Sweep.SweepApplication[main] Starting SweepApplication using Java 17.0.13 with PID 3084 (D:\IntellijWorkspace\Sweep\Sweep\target\classes started by bhanu in D:\IntellijWorkspace\Sweep)
+2024-11-29 21:20:10,571 [INFO] com.banking.Sweep.SweepApplication[main] No active profile set, falling back to 1 default profile: "default"
+2024-11-29 21:20:11,499 [INFO] org.springframework.data.repository.config.RepositoryConfigurationDelegate[main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-29 21:20:11,574 [INFO] org.springframework.data.repository.config.RepositoryConfigurationDelegate[main] Finished Spring Data repository scanning in 65 ms. Found 5 JPA repository interfaces.
+2024-11-29 21:20:12,170 [INFO] org.springframework.boot.web.embedded.tomcat.TomcatWebServer[main] Tomcat initialized with port 8080 (http)
+2024-11-29 21:20:12,189 [INFO] org.apache.catalina.core.StandardService[main] Starting service [Tomcat]
+2024-11-29 21:20:12,189 [INFO] org.apache.catalina.core.StandardEngine[main] Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-11-29 21:20:12,267 [INFO] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/][main] Initializing Spring embedded WebApplicationContext
+2024-11-29 21:20:12,267 [INFO] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext[main] Root WebApplicationContext: initialization completed in 1640 ms
+2024-11-29 21:20:12,430 [INFO] org.hibernate.jpa.internal.util.LogHelper[main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-29 21:20:12,482 [INFO] org.hibernate.Version[main] HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-11-29 21:20:12,524 [INFO] org.hibernate.cache.internal.RegionFactoryInitiator[main] HHH000026: Second-level cache disabled
+2024-11-29 21:20:12,827 [INFO] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo[main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-29 21:20:12,872 [INFO] com.zaxxer.hikari.HikariDataSource[main] HikariPool-1 - Starting...
+2024-11-29 21:20:13,180 [INFO] com.zaxxer.hikari.pool.HikariPool[main] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@646e6d07
+2024-11-29 21:20:13,180 [INFO] com.zaxxer.hikari.HikariDataSource[main] HikariPool-1 - Start completed.
+2024-11-29 21:20:14,128 [INFO] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator[main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-29 21:20:14,207 [INFO] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean[main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-29 21:20:14,466 [INFO] org.springframework.data.jpa.repository.query.QueryEnhancerFactory[main] Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-11-29 21:20:14,786 [WARN] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration[main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-11-29 21:20:15,234 [INFO] org.springframework.boot.web.embedded.tomcat.TomcatWebServer[main] Tomcat started on port 8080 (http) with context path '/'
+2024-11-29 21:20:15,249 [INFO] com.banking.Sweep.SweepApplication[main] Started SweepApplication in 5.131 seconds (process running for 5.498)
+2024-11-29 21:20:23,193 [INFO] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/][http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-11-29 21:20:23,195 [INFO] org.springframework.web.servlet.DispatcherServlet[http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2024-11-29 21:20:23,195 [INFO] org.springframework.web.servlet.DispatcherServlet[http-nio-8080-exec-1] Completed initialization in 0 ms
+2024-11-29 21:20:23,509 [WARN] org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver[http-nio-8080-exec-1] Ignoring exception, response committed already: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Document nesting depth (1001) exceeds the maximum allowed (1000, from `StreamWriteConstraints.getMaxNestingDepth()`)
+2024-11-29 21:20:23,511 [WARN] org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver[http-nio-8080-exec-1] Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Document nesting depth (1001) exceeds the maximum allowed (1000, from `StreamWriteConstraints.getMaxNestingDepth()`)]
+2024-11-29 21:22:08,200 [INFO] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean[SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-29 21:22:08,203 [INFO] com.zaxxer.hikari.HikariDataSource[SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-11-29 21:22:08,212 [INFO] com.zaxxer.hikari.HikariDataSource[SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-11-29 21:22:11,196 [INFO] com.banking.Sweep.SweepApplication[main] Starting SweepApplication using Java 17.0.13 with PID 3316 (D:\IntellijWorkspace\Sweep\Sweep\target\classes started by bhanu in D:\IntellijWorkspace\Sweep)
+2024-11-29 21:22:11,201 [INFO] com.banking.Sweep.SweepApplication[main] No active profile set, falling back to 1 default profile: "default"
+2024-11-29 21:22:12,133 [INFO] org.springframework.data.repository.config.RepositoryConfigurationDelegate[main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-29 21:22:12,219 [INFO] org.springframework.data.repository.config.RepositoryConfigurationDelegate[main] Finished Spring Data repository scanning in 79 ms. Found 5 JPA repository interfaces.
+2024-11-29 21:22:12,804 [INFO] org.springframework.boot.web.embedded.tomcat.TomcatWebServer[main] Tomcat initialized with port 8080 (http)
+2024-11-29 21:22:12,815 [INFO] org.apache.catalina.core.StandardService[main] Starting service [Tomcat]
+2024-11-29 21:22:12,815 [INFO] org.apache.catalina.core.StandardEngine[main] Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-11-29 21:22:12,873 [INFO] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/][main] Initializing Spring embedded WebApplicationContext
+2024-11-29 21:22:12,873 [INFO] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext[main] Root WebApplicationContext: initialization completed in 1620 ms
+2024-11-29 21:22:13,037 [INFO] org.hibernate.jpa.internal.util.LogHelper[main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-29 21:22:13,106 [INFO] org.hibernate.Version[main] HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-11-29 21:22:13,148 [INFO] org.hibernate.cache.internal.RegionFactoryInitiator[main] HHH000026: Second-level cache disabled
+2024-11-29 21:22:13,449 [INFO] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo[main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-29 21:22:13,474 [INFO] com.zaxxer.hikari.HikariDataSource[main] HikariPool-1 - Starting...
+2024-11-29 21:22:13,752 [INFO] com.zaxxer.hikari.pool.HikariPool[main] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@646e6d07
+2024-11-29 21:22:13,753 [INFO] com.zaxxer.hikari.HikariDataSource[main] HikariPool-1 - Start completed.
+2024-11-29 21:22:14,683 [INFO] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator[main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-29 21:22:14,752 [INFO] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean[main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-29 21:22:14,989 [INFO] org.springframework.data.jpa.repository.query.QueryEnhancerFactory[main] Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-11-29 21:22:15,292 [WARN] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration[main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-11-29 21:22:15,716 [INFO] org.springframework.boot.web.embedded.tomcat.TomcatWebServer[main] Tomcat started on port 8080 (http) with context path '/'
+2024-11-29 21:22:15,730 [INFO] com.banking.Sweep.SweepApplication[main] Started SweepApplication in 5.024 seconds (process running for 5.395)
+2024-11-29 21:22:20,293 [INFO] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/][http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-11-29 21:22:20,293 [INFO] org.springframework.web.servlet.DispatcherServlet[http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2024-11-29 21:22:20,293 [INFO] org.springframework.web.servlet.DispatcherServlet[http-nio-8080-exec-1] Completed initialization in 0 ms
+2024-11-29 21:22:20,724 [WARN] org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver[http-nio-8080-exec-1] Ignoring exception, response committed already: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Document nesting depth (1001) exceeds the maximum allowed (1000, from `StreamWriteConstraints.getMaxNestingDepth()`)
+2024-11-29 21:22:20,724 [WARN] org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver[http-nio-8080-exec-1] Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Document nesting depth (1001) exceeds the maximum allowed (1000, from `StreamWriteConstraints.getMaxNestingDepth()`)]
+2024-11-29 21:32:31,384 [INFO] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean[SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-29 21:32:31,394 [INFO] com.zaxxer.hikari.HikariDataSource[SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-11-29 21:32:31,403 [INFO] com.zaxxer.hikari.HikariDataSource[SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-11-29 21:32:35,416 [INFO] com.banking.Sweep.SweepApplication[main] Starting SweepApplication using Java 17.0.13 with PID 3164 (D:\IntellijWorkspace\Sweep\Sweep\target\classes started by bhanu in D:\IntellijWorkspace\Sweep)
+2024-11-29 21:32:35,420 [INFO] com.banking.Sweep.SweepApplication[main] No active profile set, falling back to 1 default profile: "default"
+2024-11-29 21:32:36,399 [INFO] org.springframework.data.repository.config.RepositoryConfigurationDelegate[main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-29 21:32:36,493 [INFO] org.springframework.data.repository.config.RepositoryConfigurationDelegate[main] Finished Spring Data repository scanning in 84 ms. Found 5 JPA repository interfaces.
+2024-11-29 21:32:37,135 [INFO] org.springframework.boot.web.embedded.tomcat.TomcatWebServer[main] Tomcat initialized with port 8080 (http)
+2024-11-29 21:32:37,142 [INFO] org.apache.catalina.core.StandardService[main] Starting service [Tomcat]
+2024-11-29 21:32:37,142 [INFO] org.apache.catalina.core.StandardEngine[main] Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-11-29 21:32:37,219 [INFO] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/][main] Initializing Spring embedded WebApplicationContext
+2024-11-29 21:32:37,219 [INFO] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext[main] Root WebApplicationContext: initialization completed in 1748 ms
+2024-11-29 21:32:37,372 [INFO] org.hibernate.jpa.internal.util.LogHelper[main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-29 21:32:37,426 [INFO] org.hibernate.Version[main] HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-11-29 21:32:37,458 [INFO] org.hibernate.cache.internal.RegionFactoryInitiator[main] HHH000026: Second-level cache disabled
+2024-11-29 21:32:37,795 [INFO] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo[main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-29 21:32:37,820 [INFO] com.zaxxer.hikari.HikariDataSource[main] HikariPool-1 - Starting...
+2024-11-29 21:32:38,096 [INFO] com.zaxxer.hikari.pool.HikariPool[main] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@686b1e2d
+2024-11-29 21:32:38,097 [INFO] com.zaxxer.hikari.HikariDataSource[main] HikariPool-1 - Start completed.
+2024-11-29 21:32:39,090 [INFO] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator[main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-29 21:32:39,162 [INFO] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean[main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-29 21:32:39,403 [INFO] org.springframework.data.jpa.repository.query.QueryEnhancerFactory[main] Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-11-29 21:32:39,702 [WARN] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration[main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-11-29 21:32:40,142 [INFO] org.springframework.boot.web.embedded.tomcat.TomcatWebServer[main] Tomcat started on port 8080 (http) with context path '/'
+2024-11-29 21:32:40,161 [INFO] com.banking.Sweep.SweepApplication[main] Started SweepApplication in 5.207 seconds (process running for 5.583)
+2024-11-29 21:32:46,272 [INFO] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/][http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-11-29 21:32:46,272 [INFO] org.springframework.web.servlet.DispatcherServlet[http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2024-11-29 21:32:46,272 [INFO] org.springframework.web.servlet.DispatcherServlet[http-nio-8080-exec-1] Completed initialization in 0 ms
+2024-11-29 21:32:46,451 [ERROR] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet][http-nio-8080-exec-1] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.NullPointerException: Cannot invoke "org.modelmapper.ModelMapper.map(Object, java.lang.Class)" because "this.modelMapper" is null] with root cause
+java.lang.NullPointerException: Cannot invoke "org.modelmapper.ModelMapper.map(Object, java.lang.Class)" because "this.modelMapper" is null
+	at com.banking.Sweep.service.impl.TransactionServiceImpl.getTransactionById(TransactionServiceImpl.java:31)
+	at com.banking.Sweep.controller.TransactionController.getTransactionById(TransactionController.java:24)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+2024-11-29 21:33:16,441 [INFO] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean[SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-29 21:33:16,441 [INFO] com.zaxxer.hikari.HikariDataSource[SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-11-29 21:33:16,457 [INFO] com.zaxxer.hikari.HikariDataSource[SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-11-29 21:33:20,144 [INFO] com.banking.Sweep.SweepApplication[main] Starting SweepApplication using Java 17.0.13 with PID 9976 (D:\IntellijWorkspace\Sweep\Sweep\target\classes started by bhanu in D:\IntellijWorkspace\Sweep)
+2024-11-29 21:33:20,145 [INFO] com.banking.Sweep.SweepApplication[main] No active profile set, falling back to 1 default profile: "default"
+2024-11-29 21:33:21,082 [INFO] org.springframework.data.repository.config.RepositoryConfigurationDelegate[main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-29 21:33:21,178 [INFO] org.springframework.data.repository.config.RepositoryConfigurationDelegate[main] Finished Spring Data repository scanning in 86 ms. Found 5 JPA repository interfaces.
+2024-11-29 21:33:21,799 [INFO] org.springframework.boot.web.embedded.tomcat.TomcatWebServer[main] Tomcat initialized with port 8080 (http)
+2024-11-29 21:33:21,816 [INFO] org.apache.catalina.core.StandardService[main] Starting service [Tomcat]
+2024-11-29 21:33:21,816 [INFO] org.apache.catalina.core.StandardEngine[main] Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-11-29 21:33:21,896 [INFO] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/][main] Initializing Spring embedded WebApplicationContext
+2024-11-29 21:33:21,896 [INFO] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext[main] Root WebApplicationContext: initialization completed in 1701 ms
+2024-11-29 21:33:22,052 [INFO] org.hibernate.jpa.internal.util.LogHelper[main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-29 21:33:22,111 [INFO] org.hibernate.Version[main] HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-11-29 21:33:22,147 [INFO] org.hibernate.cache.internal.RegionFactoryInitiator[main] HHH000026: Second-level cache disabled
+2024-11-29 21:33:22,470 [INFO] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo[main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-29 21:33:22,506 [INFO] com.zaxxer.hikari.HikariDataSource[main] HikariPool-1 - Starting...
+2024-11-29 21:33:22,786 [INFO] com.zaxxer.hikari.pool.HikariPool[main] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@646e6d07
+2024-11-29 21:33:22,789 [INFO] com.zaxxer.hikari.HikariDataSource[main] HikariPool-1 - Start completed.
+2024-11-29 21:33:23,765 [INFO] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator[main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-29 21:33:23,838 [INFO] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean[main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-29 21:33:24,141 [INFO] org.springframework.data.jpa.repository.query.QueryEnhancerFactory[main] Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-11-29 21:33:24,396 [WARN] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration[main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-11-29 21:33:24,850 [INFO] org.springframework.boot.web.embedded.tomcat.TomcatWebServer[main] Tomcat started on port 8080 (http) with context path '/'
+2024-11-29 21:33:24,870 [INFO] com.banking.Sweep.SweepApplication[main] Started SweepApplication in 5.203 seconds (process running for 5.601)
+2024-11-29 21:33:30,320 [INFO] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/][http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-11-29 21:33:30,320 [INFO] org.springframework.web.servlet.DispatcherServlet[http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2024-11-29 21:33:30,323 [INFO] org.springframework.web.servlet.DispatcherServlet[http-nio-8080-exec-1] Completed initialization in 3 ms
+2024-11-29 21:39:27,902 [INFO] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean[SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-29 21:39:27,903 [INFO] com.zaxxer.hikari.HikariDataSource[SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-11-29 21:39:27,911 [INFO] com.zaxxer.hikari.HikariDataSource[SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-11-29 21:42:00,451 [INFO] com.banking.Sweep.SweepApplication[main] Starting SweepApplication using Java 17.0.13 with PID 3680 (D:\IntellijWorkspace\Sweep\Sweep\target\classes started by bhanu in D:\IntellijWorkspace\Sweep)
+2024-11-29 21:42:00,455 [INFO] com.banking.Sweep.SweepApplication[main] No active profile set, falling back to 1 default profile: "default"
+2024-11-29 21:42:01,394 [INFO] org.springframework.data.repository.config.RepositoryConfigurationDelegate[main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-29 21:42:01,483 [INFO] org.springframework.data.repository.config.RepositoryConfigurationDelegate[main] Finished Spring Data repository scanning in 79 ms. Found 5 JPA repository interfaces.
+2024-11-29 21:42:02,104 [INFO] org.springframework.boot.web.embedded.tomcat.TomcatWebServer[main] Tomcat initialized with port 8080 (http)
+2024-11-29 21:42:02,116 [INFO] org.apache.catalina.core.StandardService[main] Starting service [Tomcat]
+2024-11-29 21:42:02,120 [INFO] org.apache.catalina.core.StandardEngine[main] Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-11-29 21:42:02,184 [INFO] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/][main] Initializing Spring embedded WebApplicationContext
+2024-11-29 21:42:02,188 [INFO] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext[main] Root WebApplicationContext: initialization completed in 1677 ms
+2024-11-29 21:42:02,336 [INFO] org.hibernate.jpa.internal.util.LogHelper[main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-29 21:42:02,397 [INFO] org.hibernate.Version[main] HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-11-29 21:42:02,434 [INFO] org.hibernate.cache.internal.RegionFactoryInitiator[main] HHH000026: Second-level cache disabled
+2024-11-29 21:42:02,752 [INFO] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo[main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-29 21:42:02,786 [INFO] com.zaxxer.hikari.HikariDataSource[main] HikariPool-1 - Starting...
+2024-11-29 21:42:03,090 [INFO] com.zaxxer.hikari.pool.HikariPool[main] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@652b3733
+2024-11-29 21:42:03,092 [INFO] com.zaxxer.hikari.HikariDataSource[main] HikariPool-1 - Start completed.
+2024-11-29 21:42:04,008 [INFO] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator[main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-29 21:42:04,075 [INFO] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean[main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-29 21:42:04,348 [INFO] org.springframework.data.jpa.repository.query.QueryEnhancerFactory[main] Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-11-29 21:42:04,672 [WARN] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration[main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-11-29 21:42:05,123 [INFO] org.springframework.boot.web.embedded.tomcat.TomcatWebServer[main] Tomcat started on port 8080 (http) with context path '/'
+2024-11-29 21:42:05,139 [INFO] com.banking.Sweep.SweepApplication[main] Started SweepApplication in 5.166 seconds (process running for 5.555)
+2024-11-29 21:42:15,545 [INFO] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/][http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-11-29 21:42:15,554 [INFO] org.springframework.web.servlet.DispatcherServlet[http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2024-11-29 21:42:15,555 [INFO] org.springframework.web.servlet.DispatcherServlet[http-nio-8080-exec-1] Completed initialization in 1 ms
+2024-11-29 21:51:04,668 [INFO] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean[SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-29 21:51:04,672 [INFO] com.zaxxer.hikari.HikariDataSource[SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-11-29 21:51:04,680 [INFO] com.zaxxer.hikari.HikariDataSource[SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-11-29 21:51:08,366 [INFO] com.banking.Sweep.SweepApplication[main] Starting SweepApplication using Java 17.0.13 with PID 11920 (D:\IntellijWorkspace\Sweep\Sweep\target\classes started by bhanu in D:\IntellijWorkspace\Sweep)
+2024-11-29 21:51:08,369 [INFO] com.banking.Sweep.SweepApplication[main] No active profile set, falling back to 1 default profile: "default"
+2024-11-29 21:51:09,352 [INFO] org.springframework.data.repository.config.RepositoryConfigurationDelegate[main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-29 21:51:09,432 [INFO] org.springframework.data.repository.config.RepositoryConfigurationDelegate[main] Finished Spring Data repository scanning in 74 ms. Found 5 JPA repository interfaces.
+2024-11-29 21:51:10,061 [INFO] org.springframework.boot.web.embedded.tomcat.TomcatWebServer[main] Tomcat initialized with port 8080 (http)
+2024-11-29 21:51:10,076 [INFO] org.apache.catalina.core.StandardService[main] Starting service [Tomcat]
+2024-11-29 21:51:10,084 [INFO] org.apache.catalina.core.StandardEngine[main] Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-11-29 21:51:10,151 [INFO] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/][main] Initializing Spring embedded WebApplicationContext
+2024-11-29 21:51:10,152 [INFO] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext[main] Root WebApplicationContext: initialization completed in 1736 ms
+2024-11-29 21:51:10,333 [INFO] org.hibernate.jpa.internal.util.LogHelper[main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-29 21:51:10,383 [INFO] org.hibernate.Version[main] HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-11-29 21:51:10,418 [INFO] org.hibernate.cache.internal.RegionFactoryInitiator[main] HHH000026: Second-level cache disabled
+2024-11-29 21:51:10,741 [INFO] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo[main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-29 21:51:10,776 [INFO] com.zaxxer.hikari.HikariDataSource[main] HikariPool-1 - Starting...
+2024-11-29 21:51:11,069 [INFO] com.zaxxer.hikari.pool.HikariPool[main] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5501d1c8
+2024-11-29 21:51:11,069 [INFO] com.zaxxer.hikari.HikariDataSource[main] HikariPool-1 - Start completed.
+2024-11-29 21:51:12,105 [INFO] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator[main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-29 21:51:12,174 [INFO] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean[main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-29 21:51:12,425 [INFO] org.springframework.data.jpa.repository.query.QueryEnhancerFactory[main] Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-11-29 21:51:12,734 [WARN] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration[main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-11-29 21:51:13,242 [INFO] org.springframework.boot.web.embedded.tomcat.TomcatWebServer[main] Tomcat started on port 8080 (http) with context path '/'
+2024-11-29 21:51:13,258 [INFO] com.banking.Sweep.SweepApplication[main] Started SweepApplication in 5.388 seconds (process running for 5.791)
+2024-11-29 21:51:33,954 [INFO] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/][http-nio-8080-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-11-29 21:51:33,954 [INFO] org.springframework.web.servlet.DispatcherServlet[http-nio-8080-exec-2] Initializing Servlet 'dispatcherServlet'
+2024-11-29 21:51:33,961 [INFO] org.springframework.web.servlet.DispatcherServlet[http-nio-8080-exec-2] Completed initialization in 7 ms
+2024-11-29 21:54:54,836 [INFO] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean[SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-29 21:54:54,836 [INFO] com.zaxxer.hikari.HikariDataSource[SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-11-29 21:54:54,851 [INFO] com.zaxxer.hikari.HikariDataSource[SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-11-29 21:54:57,620 [INFO] com.banking.Sweep.SweepApplication[main] Starting SweepApplication using Java 17.0.13 with PID 7824 (D:\IntellijWorkspace\Sweep\Sweep\target\classes started by bhanu in D:\IntellijWorkspace\Sweep)
+2024-11-29 21:54:57,620 [INFO] com.banking.Sweep.SweepApplication[main] No active profile set, falling back to 1 default profile: "default"
+2024-11-29 21:54:58,548 [INFO] org.springframework.data.repository.config.RepositoryConfigurationDelegate[main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-29 21:54:58,632 [INFO] org.springframework.data.repository.config.RepositoryConfigurationDelegate[main] Finished Spring Data repository scanning in 73 ms. Found 5 JPA repository interfaces.
+2024-11-29 21:54:59,296 [INFO] org.springframework.boot.web.embedded.tomcat.TomcatWebServer[main] Tomcat initialized with port 8080 (http)
+2024-11-29 21:54:59,311 [INFO] org.apache.catalina.core.StandardService[main] Starting service [Tomcat]
+2024-11-29 21:54:59,311 [INFO] org.apache.catalina.core.StandardEngine[main] Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-11-29 21:54:59,385 [INFO] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/][main] Initializing Spring embedded WebApplicationContext
+2024-11-29 21:54:59,385 [INFO] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext[main] Root WebApplicationContext: initialization completed in 1713 ms
+2024-11-29 21:54:59,566 [INFO] org.hibernate.jpa.internal.util.LogHelper[main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-29 21:54:59,612 [INFO] org.hibernate.Version[main] HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-11-29 21:54:59,644 [INFO] org.hibernate.cache.internal.RegionFactoryInitiator[main] HHH000026: Second-level cache disabled
+2024-11-29 21:54:59,963 [INFO] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo[main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-29 21:54:59,991 [INFO] com.zaxxer.hikari.HikariDataSource[main] HikariPool-1 - Starting...
+2024-11-29 21:55:00,282 [INFO] com.zaxxer.hikari.pool.HikariPool[main] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5501d1c8
+2024-11-29 21:55:00,283 [INFO] com.zaxxer.hikari.HikariDataSource[main] HikariPool-1 - Start completed.
+2024-11-29 21:55:01,280 [INFO] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator[main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-29 21:55:01,340 [INFO] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean[main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-29 21:55:01,581 [INFO] org.springframework.data.jpa.repository.query.QueryEnhancerFactory[main] Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-11-29 21:55:01,869 [WARN] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration[main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-11-29 21:55:02,351 [INFO] org.springframework.boot.web.embedded.tomcat.TomcatWebServer[main] Tomcat started on port 8080 (http) with context path '/'
+2024-11-29 21:55:02,370 [INFO] com.banking.Sweep.SweepApplication[main] Started SweepApplication in 5.202 seconds (process running for 5.583)
+2024-11-29 21:55:17,351 [INFO] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean[SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-29 21:55:17,355 [INFO] com.zaxxer.hikari.HikariDataSource[SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-11-29 21:55:17,366 [INFO] com.zaxxer.hikari.HikariDataSource[SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-11-29 21:55:20,131 [INFO] com.banking.Sweep.SweepApplication[main] Starting SweepApplication using Java 17.0.13 with PID 4404 (D:\IntellijWorkspace\Sweep\Sweep\target\classes started by bhanu in D:\IntellijWorkspace\Sweep)
+2024-11-29 21:55:20,134 [INFO] com.banking.Sweep.SweepApplication[main] No active profile set, falling back to 1 default profile: "default"
+2024-11-29 21:55:21,063 [INFO] org.springframework.data.repository.config.RepositoryConfigurationDelegate[main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-29 21:55:21,147 [INFO] org.springframework.data.repository.config.RepositoryConfigurationDelegate[main] Finished Spring Data repository scanning in 77 ms. Found 5 JPA repository interfaces.
+2024-11-29 21:55:21,789 [INFO] org.springframework.boot.web.embedded.tomcat.TomcatWebServer[main] Tomcat initialized with port 8080 (http)
+2024-11-29 21:55:21,789 [INFO] org.apache.catalina.core.StandardService[main] Starting service [Tomcat]
+2024-11-29 21:55:21,789 [INFO] org.apache.catalina.core.StandardEngine[main] Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-11-29 21:55:21,868 [INFO] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/][main] Initializing Spring embedded WebApplicationContext
+2024-11-29 21:55:21,868 [INFO] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext[main] Root WebApplicationContext: initialization completed in 1682 ms
+2024-11-29 21:55:22,036 [INFO] org.hibernate.jpa.internal.util.LogHelper[main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-29 21:55:22,089 [INFO] org.hibernate.Version[main] HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-11-29 21:55:22,136 [INFO] org.hibernate.cache.internal.RegionFactoryInitiator[main] HHH000026: Second-level cache disabled
+2024-11-29 21:55:22,440 [INFO] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo[main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-29 21:55:22,474 [INFO] com.zaxxer.hikari.HikariDataSource[main] HikariPool-1 - Starting...
+2024-11-29 21:55:22,762 [INFO] com.zaxxer.hikari.pool.HikariPool[main] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6e7e0259
+2024-11-29 21:55:22,769 [INFO] com.zaxxer.hikari.HikariDataSource[main] HikariPool-1 - Start completed.
+2024-11-29 21:55:23,689 [INFO] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator[main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-29 21:55:23,752 [INFO] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean[main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-29 21:55:23,996 [INFO] org.springframework.data.jpa.repository.query.QueryEnhancerFactory[main] Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-11-29 21:55:24,297 [WARN] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration[main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-11-29 21:55:24,780 [INFO] org.springframework.boot.web.embedded.tomcat.TomcatWebServer[main] Tomcat started on port 8080 (http) with context path '/'
+2024-11-29 21:55:24,788 [INFO] com.banking.Sweep.SweepApplication[main] Started SweepApplication in 5.115 seconds (process running for 5.486)

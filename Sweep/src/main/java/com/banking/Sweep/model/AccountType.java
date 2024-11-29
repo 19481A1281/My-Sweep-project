@@ -1,5 +1,6 @@
 package com.banking.Sweep.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Size;
 import org.hibernate.annotations.NaturalId;
@@ -50,5 +51,5 @@ public enum AccountType{
     CURRENT,
     BUSINESS,
     LOAN,
-    FIXED_DEPOSIT
+    FIXED_DEPOSIT;
 }

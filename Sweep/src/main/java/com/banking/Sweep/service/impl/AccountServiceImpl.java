@@ -2,7 +2,10 @@ package com.banking.Sweep.service.impl;
 
 import com.banking.Sweep.DTO.AccountDTO;
 import com.banking.Sweep.DTO.AdjustBalanceDTO;
+import com.banking.Sweep.Exception.DoesNotExistException;
+import com.banking.Sweep.Exception.InsufficientFundsException;
 import com.banking.Sweep.model.Account;
+import com.banking.Sweep.model.AccountType;
 import com.banking.Sweep.model.Transaction;
 import com.banking.Sweep.repository.AccountRepository;
 import com.banking.Sweep.repository.TransactionRepository;
@@ -54,18 +57,24 @@ public class AccountServiceImpl implements AccountService {
 
     @Override
     public void updateAccountBalance(AdjustBalanceDTO adjustBalanceDTO) {
-        Account account=accountRepository.findById(adjustBalanceDTO.accountNumber()).get();
+        Account account=accountRepository.findById(adjustBalanceDTO.accountNumber()).orElseThrow(()-> new DoesNotExistException("Account doesn't exist"));
 
         Double newBalance=account.getBalance()+adjustBalanceDTO.amount();
 
         if(account.getBalance()>0) {
             account.setBalance(newBalance);
             accountRepository.save(account);
-            Transaction transaction=new Transaction(newBalance,account, LocalDateTime.now());
+            Transaction transaction=new Transaction(adjustBalanceDTO.amount(),account, LocalDateTime.now());
+            transactionRepository.save(transaction);
+        }
+        else if(account.getBalance()==0 && newBalance>0){
+            account.setBalance(newBalance);
+            accountRepository.save(account);
+            Transaction transaction=new Transaction(adjustBalanceDTO.amount(),account, LocalDateTime.now());
             transactionRepository.save(transaction);
         }
         else {
-            throw new ArithmeticException("Insufficient funds");
+            throw new InsufficientFundsException("Insufficient funds");
         }
 
     }

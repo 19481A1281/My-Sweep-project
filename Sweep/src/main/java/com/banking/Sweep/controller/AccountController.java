@@ -3,6 +3,7 @@ package com.banking.Sweep.controller;
 import com.banking.Sweep.DTO.AccountDTO;
 import com.banking.Sweep.DTO.AdjustBalanceDTO;
 import com.banking.Sweep.model.Account;
+import com.banking.Sweep.model.AccountType;
 import com.banking.Sweep.service.AccountService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +26,7 @@ public class AccountController {
 
     @PostMapping
     public String registerAccount(@RequestBody Account account){
+
         accountService.createAccount(account);
         return "Account Created Successfully";
     }
@@ -56,9 +58,8 @@ public class AccountController {
     @PatchMapping("adjust-balance")
     public String updateAccountBalance(@RequestBody AdjustBalanceDTO adjustBalanceDTO){
         accountService.updateAccountBalance(adjustBalanceDTO);
-        return "Account Updated successfully";
+        return "Transaction completed";
     }
-
 
     @DeleteMapping("{accountNumber}")
     public String deleteAccount(@PathVariable Long accountNumber){

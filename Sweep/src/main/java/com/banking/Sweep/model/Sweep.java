@@ -9,13 +9,9 @@ public class Sweep {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long sweepId;
 
-//    @ManyToOne
-//    @JoinColumn(name = "sourceAccountNumber",referencedColumnName = "accountNumber",nullable = false,unique = true)
     @Column(nullable = false)
     private Long sourceAccount;
 
-//    @ManyToOne
-//    @JoinColumn(name = "destinationAccountNumber",referencedColumnName = "accountNumber",nullable = false,unique = true)
     @Column(nullable = false)
     private Long destinationAccount;
 

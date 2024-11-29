@@ -20,6 +20,8 @@ public interface UserRepository extends JpaRepository<User, Long> {
 
     @Query(value = "select * from user where user_email =:userEmail",nativeQuery = true)
     UserDTO findByEmail(String userEmail);
+
+    boolean existsByUserEmail(String userEmail);
     // Additional custom query methods can be added here
 
 }

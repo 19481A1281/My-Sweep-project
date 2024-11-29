@@ -1,6 +1,6 @@
 package com.banking.Sweep.controller;
 
-import com.banking.Sweep.DTO.GetSweepStatusDTO;
+import com.banking.Sweep.DTO.DateRangeDTO;
 import com.banking.Sweep.model.SweepStatus;
 import com.banking.Sweep.service.SweepStatusService;
 import org.springframework.web.bind.annotation.*;
@@ -18,8 +18,8 @@ public class SweepStatusController {
     }
 
     @GetMapping("/custom-date")
-    public List<SweepStatus> getSweepStatus(@RequestBody GetSweepStatusDTO getSweepStatusDTO){
-        return sweepStatusService.getSweepStatus(getSweepStatusDTO);
+    public List<SweepStatus> getSweepStatus(@RequestBody DateRangeDTO dateRangeDTO){
+        return sweepStatusService.getSweepStatus(dateRangeDTO);
     }
 
     @GetMapping("/all")

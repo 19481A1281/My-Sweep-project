@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Map;
 
 public interface UserService {
-    User createUser(User user);
+    void createUser(User user);
 
     @Query(value = "select * from user where user_id =: userId",nativeQuery = true)
     UserDTO retriveUserById(Long userId);

@@ -1,14 +1,14 @@
 package com.banking.Sweep.DTO;
 
 
-public class GetSweepStatusDTO {
+public class DateRangeDTO {
     private String startDate;
     private String endDate;
 
-    public GetSweepStatusDTO() {
+    public DateRangeDTO() {
     }
 
-    public GetSweepStatusDTO(String startDate, String endDate) {
+    public DateRangeDTO(String startDate, String endDate) {
         this.startDate = startDate;
         this.endDate = endDate;
     }

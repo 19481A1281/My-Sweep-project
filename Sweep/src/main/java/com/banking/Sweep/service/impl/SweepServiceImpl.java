@@ -1,6 +1,7 @@
 package com.banking.Sweep.service.impl;
 
 import com.banking.Sweep.DTO.AdjustBalanceDTO;
+import com.banking.Sweep.Exception.SweepSetupException;
 import com.banking.Sweep.controller.AccountController;
 import com.banking.Sweep.controller.SweepStatusController;
 import com.banking.Sweep.model.Sweep;
@@ -10,7 +11,6 @@ import com.banking.Sweep.repository.SweepRepository;
 import com.banking.Sweep.service.SweepService;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
-
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -38,6 +38,9 @@ public class SweepServiceImpl implements SweepService {
 
         if(sourceOptedForSweep && destinationOptedForSweep){
             sweepRepository.save(sweep);
+        }
+        else{
+            throw new SweepSetupException("Either source or destination account or both does not opted for sweep");
         }
     }
 

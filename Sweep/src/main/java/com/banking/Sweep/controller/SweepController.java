@@ -21,7 +21,7 @@ public class SweepController {
         return "Sweep added successfully";
     }
 
-    @Scheduled(cron = "59 02 22 * * ?")
+    @Scheduled(cron = "45 55 21 * * ?")
     @PatchMapping
     public String startSweep(){
         sweepService.startSweep();

@@ -1,6 +1,6 @@
 package com.banking.Sweep.service.impl;
 
-import com.banking.Sweep.DTO.GetSweepStatusDTO;
+import com.banking.Sweep.DTO.DateRangeDTO;
 import com.banking.Sweep.model.SweepStatus;
 import com.banking.Sweep.repository.SweepStatusRepository;
 import com.banking.Sweep.service.SweepStatusService;
@@ -31,8 +31,8 @@ public class SweepStatusServiceImpl implements SweepStatusService {
     }
 
     @Override
-    public List<SweepStatus> getSweepStatus(GetSweepStatusDTO getSweepStatusDTO) {
-        return sweepStatusRepository.findAllByTimeStampBetween(LocalDateTime.parse(getSweepStatusDTO.getStartDate()), LocalDateTime.parse(getSweepStatusDTO.getEndDate()));
+    public List<SweepStatus> getSweepStatus(DateRangeDTO dateRangeDTO) {
+        return sweepStatusRepository.findAllByTimeStampBetween(LocalDateTime.parse(dateRangeDTO.getStartDate()), LocalDateTime.parse(dateRangeDTO.getEndDate()));
     }
 
 }
