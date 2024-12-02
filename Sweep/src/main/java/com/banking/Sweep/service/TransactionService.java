@@ -14,4 +14,5 @@ public interface TransactionService {
     List<TransactionDTO> getAllTransactions();
 
     List<TransactionDTO> getTransactionsInRange(DateRangeDTO dateRangeDTO);
+    void createTransaction(Transaction transaction);
 }

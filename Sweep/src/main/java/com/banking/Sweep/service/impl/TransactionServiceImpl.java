@@ -45,4 +45,9 @@ public class TransactionServiceImpl implements TransactionService {
         List<Transaction> transactions=transactionRepository.findAllByTimeStampBetween(LocalDateTime.parse(dateRangeDTO.getStartDate()), LocalDateTime.parse(dateRangeDTO.getEndDate()));
         return transactions.stream().map(transaction -> modelMapper.map(transaction,TransactionDTO.class)).collect(Collectors.toList());
     }
+
+    @Override
+    public void createTransaction(Transaction transaction) {
+        transactionRepository.save(transaction);
+    }
 }

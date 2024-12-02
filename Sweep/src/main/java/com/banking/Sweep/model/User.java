@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Size;
 import org.hibernate.annotations.NaturalId;
-import org.hibernate.validator.constraints.Length;
 
 import java.util.List;
 
@@ -21,6 +20,14 @@ public class User {
     @NaturalId(mutable = true)
     @Email
     private String userEmail;
+
+   @Column(nullable = false)
+    private String password;
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private UserType userType;
+
 
     @OneToMany(mappedBy = "user",cascade = {CascadeType.PERSIST,CascadeType.MERGE,CascadeType.REFRESH},orphanRemoval = false)        // if any changes made  associated account will also be effected
     private List<Account> account;
@@ -46,11 +53,12 @@ public class User {
     }
 
 
-    public User(Long userId, String userName, String userEmail, List<Account> account) {
+    public User(Long userId, String userName, String userEmail, String password, UserType userType) {
         this.userId = userId;
         this.userName = userName;
         this.userEmail = userEmail;
-        this.account = account;
+        this.password = password;
+        this.userType = userType;
     }
 
     public Long getUserId() {
@@ -83,6 +91,22 @@ public class User {
 
     public void setAccount(List<Account> account) {
         this.account = account;
+    }
+
+    public  String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public UserType getUserType() {
+        return userType;
+    }
+
+    public void setUserType(UserType userType) {
+        this.userType = userType;
     }
 }
 

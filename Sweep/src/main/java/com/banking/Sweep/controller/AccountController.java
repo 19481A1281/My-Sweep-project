@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/bank/account")
@@ -49,9 +50,9 @@ public class AccountController {
     }
 
 
-    @PutMapping()
-    public String updateAccount(@RequestBody Account account){
-        accountService.updateAccount(account);
+    @PatchMapping("{accountNumber}")
+    public String updateAccount(@PathVariable Long accountNumber,@RequestBody Map<String,String> updates){
+        accountService.updateAccount(accountNumber,updates);
         return "Account updated successfully";
     }
 

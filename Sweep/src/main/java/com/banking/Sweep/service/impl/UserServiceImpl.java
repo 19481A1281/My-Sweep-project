@@ -3,7 +3,9 @@ package com.banking.Sweep.service.impl;
 import com.banking.Sweep.DTO.UserDTO;
 import com.banking.Sweep.Exception.DoesNotExistException;
 import com.banking.Sweep.Exception.DuplicateEmailException;
+import com.banking.Sweep.Exception.PasswordPatternMissMatchException;
 import com.banking.Sweep.model.User;
+import com.banking.Sweep.model.UserType;
 import com.banking.Sweep.repository.UserRepository;
 import com.banking.Sweep.service.UserService;
 import org.modelmapper.ModelMapper;
@@ -32,6 +34,7 @@ public class UserServiceImpl implements UserService {
         if(userRepository.existsByUserEmail(user.getUserEmail())){
             throw new DuplicateEmailException("The email address " + user.getUserEmail() + " is already in use.");
         }
+        validatePassword(user.getPassword());
         userRepository.save(user);
     }
 
@@ -41,6 +44,10 @@ public class UserServiceImpl implements UserService {
             User user = userRepository.findById(userId).orElseThrow(()->new DoesNotExistException("User not found with ID: " + userId));
             return modelMapper.map(user, UserDTO.class);
 
+    }
+
+    public User findById(Long userId){
+        return userRepository.findById(userId).orElseThrow(()-> new DoesNotExistException("User not found with ID: " + userId));
     }
 
     @Override
@@ -66,6 +73,12 @@ public class UserServiceImpl implements UserService {
             }
             user.setUserEmail(updates.get("userEmail"));
         }
+        if (updates.containsKey("userType")) {
+            user.setUserType(UserType.valueOf(updates.get("userType")));
+        }
+        if (updates.containsKey("password") && validatePassword(updates.get("password"))) {
+            user.setPassword(updates.get("password"));
+        }
         userRepository.save(user);
     }
 
@@ -83,12 +96,19 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserDTO getUserByEmail(String userEmail) {
         if(userRepository.existsByUserEmail(userEmail)) {
-            return userRepository.findByEmail(userEmail);
+            User user=userRepository.findByUserEmail(userEmail);
+            return modelMapper.map(user,UserDTO.class);
         }
         else{
             throw new DoesNotExistException("User not found with email :"+userEmail);
         }
     }
 
+    private boolean validatePassword(String password) {
+        if(password.matches("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$")){
+            return true;
+        }
+        throw new PasswordPatternMissMatchException("Password must contain at least 8 characters, including uppercase, lowercase, and a number");
+    }
 
 }

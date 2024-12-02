@@ -6,6 +6,8 @@ import com.banking.Sweep.service.SweepService;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/bank/sweep")
 public class SweepController {
@@ -21,7 +23,16 @@ public class SweepController {
         return "Sweep added successfully";
     }
 
-    @Scheduled(cron = "45 55 21 * * ?")
+    @GetMapping("{sweepId}")
+    public Sweep getSweepById(@PathVariable Long sweepId){
+        return sweepService.getSweepById(sweepId);
+    }
+
+    public List<Sweep> getAllSweeps(){
+        return sweepService.getAllSweeps();
+    }
+
+    @Scheduled(cron = "30 38 19 * * ?")
     @PatchMapping
     public String startSweep(){
         sweepService.startSweep();

@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 public interface UserService {
     void createUser(User user);
@@ -21,4 +22,6 @@ public interface UserService {
     void deleteUser(Long userId);
 
     UserDTO getUserByEmail(String userEmail);
+
+    User findById(Long newUserId);
 }

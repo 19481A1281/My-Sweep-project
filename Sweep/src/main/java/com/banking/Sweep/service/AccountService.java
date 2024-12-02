@@ -5,6 +5,7 @@ import com.banking.Sweep.DTO.AdjustBalanceDTO;
 import com.banking.Sweep.model.Account;
 
 import java.util.List;
+import java.util.Map;
 
 
 public interface AccountService {
@@ -12,7 +13,7 @@ public interface AccountService {
 
     AccountDTO getAccount(Long accountNumber);
 
-    void updateAccount(Account account);
+    void updateAccount(Long accountNumber,Map<String,String> updates);
 
     List<AccountDTO> getAllAccounts();
 

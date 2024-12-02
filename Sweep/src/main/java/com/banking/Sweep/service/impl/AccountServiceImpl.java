@@ -7,16 +7,21 @@ import com.banking.Sweep.Exception.InsufficientFundsException;
 import com.banking.Sweep.model.Account;
 import com.banking.Sweep.model.AccountType;
 import com.banking.Sweep.model.Transaction;
+import com.banking.Sweep.model.User;
 import com.banking.Sweep.repository.AccountRepository;
 import com.banking.Sweep.repository.TransactionRepository;
 import com.banking.Sweep.repository.UserRepository;
 import com.banking.Sweep.service.AccountService;
+import com.banking.Sweep.service.TransactionService;
+import com.banking.Sweep.service.UserService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 @Service
@@ -26,11 +31,13 @@ public class AccountServiceImpl implements AccountService {
     private ModelMapper modelMapper;
 
     private final AccountRepository accountRepository;
-    private final TransactionRepository transactionRepository;
+    private final TransactionService transactionService;
+    private final UserService userService;
 
-    public AccountServiceImpl(AccountRepository accountRepository, TransactionRepository transactionRepository) {
+    public AccountServiceImpl(AccountRepository accountRepository, TransactionService transactionService, UserService userService) {
         this.accountRepository = accountRepository;
-        this.transactionRepository = transactionRepository;
+        this.transactionService = transactionService;
+        this.userService = userService;
     }
 
     @Override
@@ -38,7 +45,7 @@ public class AccountServiceImpl implements AccountService {
 
         accountRepository.save(account);
         Transaction transaction=new Transaction(account.getBalance(), account,LocalDateTime.now());
-        transactionRepository.save(transaction);
+        transactionService.createTransaction(transaction);
     }
 
     @Override
@@ -51,7 +58,21 @@ public class AccountServiceImpl implements AccountService {
     }
 
     @Override
-    public void updateAccount(Account account) {
+    public void updateAccount(Long accountNumber,Map<String,String> updates) {
+        Account account=accountRepository.findById(accountNumber).orElseThrow(() -> new RuntimeException("Account not found"));
+        if(updates.containsKey("optForSweep")){
+            account.setOptForSweep(Boolean.parseBoolean(updates.get("optForSweep")));
+        }
+        if(updates.containsKey("accountType")){
+            account.setAccountType(AccountType.valueOf(updates.get("accountType")));
+        }
+//        if (updates.containsKey("user")) {
+//            Map<String, Object> userUpdates = new HashMap<>();
+//            userUpdates.put("userId",updates.get("userId") );
+//            Long newUserId = Long.parseLong(userUpdates.get("userId").toString());
+//            User newUser = userService.findById(newUserId);
+//            account.setUser(newUser);
+//            }
         accountRepository.save(account);
     }
 
@@ -65,13 +86,13 @@ public class AccountServiceImpl implements AccountService {
             account.setBalance(newBalance);
             accountRepository.save(account);
             Transaction transaction=new Transaction(adjustBalanceDTO.amount(),account, LocalDateTime.now());
-            transactionRepository.save(transaction);
+            transactionService.createTransaction(transaction);
         }
         else if(account.getBalance()==0 && newBalance>0){
             account.setBalance(newBalance);
             accountRepository.save(account);
             Transaction transaction=new Transaction(adjustBalanceDTO.amount(),account, LocalDateTime.now());
-            transactionRepository.save(transaction);
+            transactionService.createTransaction(transaction);
         }
         else {
             throw new InsufficientFundsException("Insufficient funds");

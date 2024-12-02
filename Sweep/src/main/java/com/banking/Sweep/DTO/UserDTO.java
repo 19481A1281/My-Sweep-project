@@ -4,14 +4,16 @@ public class UserDTO {
     private Long userId;
     private String userName;
     private String userEmail;
+    private String userType;
 
     public UserDTO() {
     }
 
-    public UserDTO(Long userId, String userName, String userEmail) {
+    public UserDTO(Long userId, String userName, String userEmail,String userType) {
         this.userId = userId;
         this.userName = userName;
         this.userEmail = userEmail;
+        this.userType = userType;
     }
 
     public Long getUserId() {
@@ -36,5 +38,13 @@ public class UserDTO {
 
     public void setUserEmail(String userEmail) {
         this.userEmail = userEmail;
+    }
+
+    public String getUserType() {
+        return userType;
+    }
+
+    public void setUserType(String userType) {
+        this.userType = userType;
     }
 }

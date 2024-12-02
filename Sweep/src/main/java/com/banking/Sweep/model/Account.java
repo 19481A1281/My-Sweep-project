@@ -1,8 +1,6 @@
 package com.banking.Sweep.model;
 
 import jakarta.persistence.*;
-import jakarta.validation.Valid;
-import org.springframework.validation.annotation.Validated;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -45,4 +45,14 @@ public class BankExceptionHandler {
         return new ResponseEntity<>(bankException,HttpStatus.NOT_ACCEPTABLE);
     }
 
+    @ExceptionHandler(value = {PasswordPatternMissMatchException.class})
+    public ResponseEntity<Object> handlePasswordPatternMissMatchException(PasswordPatternMissMatchException passwordPatternMissMatchException){
+        BankException bankException=new BankException(
+                passwordPatternMissMatchException.getMessage(),
+                passwordPatternMissMatchException.getCause(),
+                HttpStatus.NOT_ACCEPTABLE
+        );
+        return new ResponseEntity<>(bankException,HttpStatus.NOT_ACCEPTABLE);
+    }
+
 }

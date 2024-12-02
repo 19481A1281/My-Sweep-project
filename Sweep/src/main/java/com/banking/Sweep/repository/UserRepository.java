@@ -18,10 +18,12 @@ public interface UserRepository extends JpaRepository<User, Long> {
     @Query(value = "select * from user where user_id =:userId",nativeQuery = true)
     UserDTO findByDTOId(Long userId);
 
-    @Query(value = "select * from user where user_email =:userEmail",nativeQuery = true)
-    UserDTO findByEmail(String userEmail);
+    //@Query(value = "select * from user where user_email =:userEmail",nativeQuery = true)
+    //User findByEmail(String userEmail);
 
     boolean existsByUserEmail(String userEmail);
+
+    User findByUserEmail(String userEmail);
     // Additional custom query methods can be added here
 
 }
