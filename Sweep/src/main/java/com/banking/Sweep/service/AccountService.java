@@ -24,4 +24,6 @@ public interface AccountService {
     void updateAccountBalance(AdjustBalanceDTO adjustBalanceDTO);
 
     List<AccountDTO> getAllAccountsByUserId(Long userId);
+
+
 }

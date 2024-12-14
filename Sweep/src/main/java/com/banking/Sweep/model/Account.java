@@ -18,7 +18,7 @@ public class Account {
     @Column(nullable = false)
     private Double balance;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY )
     @JoinColumn(name="userId",nullable = false)
     private User user;//Account owns the relation
 
@@ -26,13 +26,7 @@ public class Account {
     @Enumerated(EnumType.STRING)
     private AccountType accountType;
 
-//    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)  // if any changes made  associated balance will also be effected
-//    @JoinColumn(name = "transaction_id", referencedColumnName = "transactionId", nullable = false)
-//    private Transaction transaction;//Account owns the relation
-//
-//
-//    @OneToMany(mappedBy = "account", cascade = CascadeType.ALL, orphanRemoval = true)
-//    private List<Transaction> transactions = new ArrayList<>(); // All transactions associated with the account
+
 
 
     @OneToMany(mappedBy = "account", cascade = CascadeType.ALL, orphanRemoval = true)
@@ -101,3 +95,5 @@ public class Account {
         this.transactions = transactions;
     }
 }
+
+

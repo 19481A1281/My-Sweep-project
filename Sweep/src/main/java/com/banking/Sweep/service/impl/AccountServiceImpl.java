@@ -14,8 +14,10 @@ import com.banking.Sweep.repository.UserRepository;
 import com.banking.Sweep.service.AccountService;
 import com.banking.Sweep.service.TransactionService;
 import com.banking.Sweep.service.UserService;
+import jakarta.transaction.Transactional;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -43,6 +45,10 @@ public class AccountServiceImpl implements AccountService {
     @Override
     public void createAccount(Account account) {
 
+        if(account.getAccountType()==AccountType.FIXED_DEPOSIT){
+            account.setOptForSweep(false);
+        }
+        
         accountRepository.save(account);
         Transaction transaction=new Transaction(account.getBalance(), account,LocalDateTime.now());
         transactionService.createTransaction(transaction);
@@ -108,6 +114,8 @@ public class AccountServiceImpl implements AccountService {
         //return accountRepository.findAllAccountsByUserId(userId).get();
     }
 
+
+
     @Override
     public List<AccountDTO> getAllAccounts() {
         List<Account> accountsList = accountRepository.findAll();
@@ -118,5 +126,25 @@ public class AccountServiceImpl implements AccountService {
     @Override
     public void deleteAccount(Long accountNumber) {
         accountRepository.deleteById(accountNumber);
+    }
+
+
+
+    @Scheduled(cron = "40 33 23 * * ?")
+    @Transactional
+    public void creditInterest(){
+        //List<Account> accountList=accountRepository.findAll();
+        List<Account> accounts=accountRepository.findAll()
+                                                .stream()
+                                                .filter(account -> "SAVINGS".equals(account.getAccountType().toString()))
+                                                .toList();
+
+        accounts.stream()
+                .map(account -> {
+                    // Calculate and set the new amount with 4% interest
+                    return new AdjustBalanceDTO(account.getAccountNumber(), account.getBalance() * 0.04);
+                }).forEach(this::updateAccountBalance);
+        // Call the method for each AdjustBalanceDto;
+
     }
 }
