@@ -40,6 +40,13 @@ public class SweepStatus {
         this.timeStamp = timeStamp;
     }
 
+    public SweepStatus(Long statusId, Long sweepId, String status, String failureReason) {  //for Testing
+        this.statusId = statusId;
+        this.sweepId = sweepId;
+        this.status = status;
+        this.failureReason = failureReason;
+    }
+
     public Long getStatusId() {
         return statusId;
     }

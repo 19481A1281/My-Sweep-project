@@ -21,6 +21,12 @@ public class TransactionDTO {
         this.timeStamp = timeStamp;
     }
 
+    public TransactionDTO(Long transactionId, Double amount, Long accountNumber) {
+        this.transactionId = transactionId;
+        this.amount = amount;
+        this.accountNumber = accountNumber;
+    }
+
     public Long getTransactionId() {
         return transactionId;
     }

@@ -28,6 +28,7 @@ public class SweepController {
         return sweepService.getSweepById(sweepId);
     }
 
+    @GetMapping()
     public List<Sweep> getAllSweeps(){
         return sweepService.getAllSweeps();
     }

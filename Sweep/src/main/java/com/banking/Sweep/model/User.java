@@ -61,6 +61,8 @@ public class User {
         this.userType = userType;
     }
 
+
+
     public Long getUserId() {
         return userId;
     }

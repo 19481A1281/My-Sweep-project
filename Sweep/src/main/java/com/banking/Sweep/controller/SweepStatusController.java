@@ -22,6 +22,8 @@ public class SweepStatusController {
         return sweepStatusService.getSweepStatus(dateRangeDTO);
     }
 
+
+
     @GetMapping("/all")
     public List<SweepStatus> getAllSweepStatus(){
        return  sweepStatusService.getAllSweepStatus();

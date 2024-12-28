@@ -16,6 +16,9 @@ public class UserDTO {
         this.userType = userType;
     }
 
+    public UserDTO(long l, String johnDoe, String mail) {
+    }
+
     public Long getUserId() {
         return userId;
     }

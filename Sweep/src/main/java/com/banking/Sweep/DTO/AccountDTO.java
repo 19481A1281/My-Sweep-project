@@ -28,6 +28,9 @@ public class AccountDTO{
         this.user = user;
     }
 
+    public AccountDTO(long l, String savings, double v) {
+    }
+
 
     public Long getAccountNumber() {
         return accountNumber;
