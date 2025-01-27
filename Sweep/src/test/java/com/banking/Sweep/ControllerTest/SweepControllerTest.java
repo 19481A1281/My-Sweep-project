@@ -1,7 +1,6 @@
 package com.banking.Sweep.ControllerTest;
 
 
-import com.banking.Sweep.DTO.SweepDTO;
 import com.banking.Sweep.controller.SweepController;
 import com.banking.Sweep.model.Sweep;
 import com.banking.Sweep.service.SweepService;

@@ -8,24 +8,27 @@ import org.hibernate.annotations.NaturalId;
 import java.util.List;
 
 @Entity
-//@Table(name="user")
+@Table(name="user")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="user_id")
     private Long userId;
 
     @Size(min=2,max=25, message = "Name must be between 2 and 25 characters")
+    @Column(name="user_name",nullable = false)
     private String userName;
 
     @NaturalId(mutable = true)
     @Email
+    @Column(name="user_email")
     private String userEmail;
 
-   @Column(nullable = false)
+   @Column(name = "password", nullable = false)
     private String password;
 
     @Enumerated(EnumType.STRING)
-    @Column(nullable = false)
+    @Column(name="user_type",nullable = false)
     private UserType userType;
 
 

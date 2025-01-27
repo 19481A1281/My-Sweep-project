@@ -2,7 +2,6 @@
 
 package com.banking.Sweep.ServiceTest;
 
-import com.banking.Sweep.DTO.SweepDTO;
 import com.banking.Sweep.Exception.DoesNotExistException;
 import com.banking.Sweep.model.Sweep;
 import com.banking.Sweep.service.SweepService;

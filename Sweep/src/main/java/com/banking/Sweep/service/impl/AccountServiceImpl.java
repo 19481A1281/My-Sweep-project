@@ -57,7 +57,7 @@ public class AccountServiceImpl implements AccountService {
     @Override
     public AccountDTO getAccount(Long accountNumber) {
         Account account = accountRepository.findById(accountNumber)
-                .orElseThrow(() -> new RuntimeException("Account not found"));
+                .orElseThrow(() -> new DoesNotExistException("Account not found"));
 
         // Use ModelMapper to convert Account entity to AccountDTO
         return modelMapper.map(account, AccountDTO.class);
@@ -65,7 +65,7 @@ public class AccountServiceImpl implements AccountService {
 
     @Override
     public void updateAccount(Long accountNumber,Map<String,String> updates) {
-        Account account=accountRepository.findById(accountNumber).orElseThrow(() -> new RuntimeException("Account not found"));
+        Account account=accountRepository.findById(accountNumber).orElseThrow(() -> new DoesNotExistException("Account not found"));
         if(updates.containsKey("optForSweep")){
             account.setOptForSweep(Boolean.parseBoolean(updates.get("optForSweep")));
         }
@@ -84,25 +84,33 @@ public class AccountServiceImpl implements AccountService {
 
     @Override
     public void updateAccountBalance(AdjustBalanceDTO adjustBalanceDTO) {
-        Account account=accountRepository.findById(adjustBalanceDTO.accountNumber()).orElseThrow(()-> new DoesNotExistException("Account doesn't exist"));
-
-        Double newBalance=account.getBalance()+adjustBalanceDTO.amount();
-
-        if(account.getBalance()>0) {
-            account.setBalance(newBalance);
-            accountRepository.save(account);
-            Transaction transaction=new Transaction(adjustBalanceDTO.amount(),account, LocalDateTime.now());
-            transactionService.createTransaction(transaction);
-        }
-        else if(account.getBalance()==0 && newBalance>0){
-            account.setBalance(newBalance);
-            accountRepository.save(account);
-            Transaction transaction=new Transaction(adjustBalanceDTO.amount(),account, LocalDateTime.now());
-            transactionService.createTransaction(transaction);
-        }
-        else {
+//        Account account=accountRepository.findById(adjustBalanceDTO.accountNumber()).orElseThrow(()-> new DoesNotExistException("Account doesn't exist"));
+//
+//        Double newBalance=account.getBalance()+adjustBalanceDTO.amount();
+//
+//        if(account.getBalance()>0) {
+//            account.setBalance(newBalance);
+//            accountRepository.save(account);
+//            Transaction transaction=new Transaction(adjustBalanceDTO.amount(),account, LocalDateTime.now());
+//            transactionService.createTransaction(transaction);
+//        }
+//        else if(account.getBalance()==0 && newBalance>0){
+//            account.setBalance(newBalance);
+//            accountRepository.save(account);
+//            Transaction transaction=new Transaction(adjustBalanceDTO.amount(),account, LocalDateTime.now());
+//            transactionService.createTransaction(transaction);
+//        }
+//        else {
+//            throw new InsufficientFundsException("Insufficient funds");
+//        }
+        Account account = accountRepository.findById(adjustBalanceDTO.accountNumber())
+                .orElseThrow(() -> new DoesNotExistException("Account not found"));
+        if (account.getBalance() + adjustBalanceDTO.amount() < 0) {
             throw new InsufficientFundsException("Insufficient funds");
         }
+        account.setBalance(account.getBalance() + adjustBalanceDTO.amount());
+        accountRepository.save(account);
+        transactionService.createTransaction(new Transaction(adjustBalanceDTO.amount(),account, LocalDateTime.now()));
 
     }
 
@@ -125,6 +133,9 @@ public class AccountServiceImpl implements AccountService {
 
     @Override
     public void deleteAccount(Long accountNumber) {
+        if (!accountRepository.existsById(accountNumber)) {
+            throw new DoesNotExistException("Account not found");
+        }
         accountRepository.deleteById(accountNumber);
     }
 

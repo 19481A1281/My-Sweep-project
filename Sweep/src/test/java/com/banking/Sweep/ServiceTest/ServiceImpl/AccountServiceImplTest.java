@@ -1,4 +1,4 @@
-package com.banking.Sweep.ServiceTest;
+package com.banking.Sweep.ServiceTest.ServiceImpl;
 
 import com.banking.Sweep.DTO.AccountDTO;
 import com.banking.Sweep.DTO.AdjustBalanceDTO;
@@ -18,7 +18,6 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.modelmapper.ModelMapper;
-import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.Arrays;
 import java.util.List;

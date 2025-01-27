@@ -1,4 +1,4 @@
-package com.banking.Sweep.configuration;
+package com.banking.Sweep.config;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
